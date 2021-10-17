@@ -5,9 +5,17 @@ from nltk.tokenize import word_tokenize
 import numpy as np
 
 
-questions = ['What is an IEP?', 'What is an LEA?', 'What is IDEA?', 'Should I have my child evaluated for special education?']
+questions = ['What is an IEP?',
+'What is an LEA?',
+'What is IDEA?',
+'Should I have my child evaluated for special education?']
 
-answers = ['IEP is an individualized Education Program that provides a written plan designed to meet the unique needs of the child with an exceptionality.', 'LEA is the local education agency, also referred to as the local school district.', 'IDEA is the Individuals with Disabilities Education Act, the Federal special education law that guarantees FAPE.']
+answers = [
+'IEP is an individualized Education Program that provides a written plan designed to meet the unique needs of the child with an exceptionality.',
+'LEA is the local education agency, also referred to as the local school district.',
+'IDEA is the Individuals with Disabilities Education Act, the Federal special education law that guarantees FAPE.',
+'If your child is between 3 and 21 and having academic, social, or behavioral problems, you may consider getting your child evaluated. In Louisiana, this is called a 1508 evaluation.  Many struggling learners first go through the School Building Level Committee (SBLC) and receive interventions (RTI) before they are referred for an evaluation. '
+]
 
 print("Hi, how can we help you?")
 x = input()
@@ -49,7 +57,7 @@ for idx, question in enumerate(questions):
   print("similarity: ", cosine)
   ranks.append((idx, cosine))
 
-ranks.sort(key=lambda y: y[1])
+ranks.sort(key=lambda y: y[1], reverse=True)
 print(ranks)
 print(answers[ranks[0][0]])
 print(answers[ranks[1][0]])
