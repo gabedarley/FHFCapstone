@@ -68,11 +68,12 @@ def find_similarity(questions, user):
 
 def answer(ranks, answers):
     f_idx, s_idx = ranks[0][0], ranks[1][0]
-    
+
     print("The first answer is", answers[f_idx])
     print("The second answer is", answers[s_idx])
-    
+
     return answers[f_idx]
+
 
 if __name__ == "__main__":
     answers, questions = read_file("data/answers.txt", "data/questions.txt")
