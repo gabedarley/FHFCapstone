@@ -13,6 +13,7 @@ def hello_world():
 
 @app.route("/answer", methods=['POST'])
 def answer_endpoint():
+    print(request)
     message = request.form.get('message')
     ranks = find_similarity(questions, message)
     return answer(ranks, answers)
