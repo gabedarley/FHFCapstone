@@ -9,18 +9,7 @@ async function getBotResponse(input) {
   } else {
     let url = 'http://127.0.0.1:5000/answer';
     let data = { "message": input };
-    // let request = new XMLHttpRequest();
-    // request.open('POST', url);
-    // request.setRequestHeader("Accept", "application/json");
-    // request.setRequestHeader("Content-Type", "application/json");
-    // let answer = null;
-    // request.onload = function () {
-    //   if (request.readyState === 4) {
-    //     console.log(request)
-    //     answer = request.response;
-    //   }
-    // };
-    // request.send(JSON.stringify(data));
+
     try {
       const response = await fetch(url, {
         method: 'POST',
