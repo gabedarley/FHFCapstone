@@ -63,6 +63,8 @@ def find_similarity(questions, user):
 
     # sort the ranks
     ranks.sort(key=lambda y: y[1], reverse=True)
+    print(ranks[0])
+    print(ranks[1])
     return ranks
 
 
