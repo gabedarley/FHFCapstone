@@ -1,30 +1,17 @@
-import math
-from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import nltk
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
-
 import spacy
+
 nlp = spacy.load("en_core_web_md")
-
-
 nltk.download('stopwords')
 nltk.download('punkt')
+sw = stopwords.words("english")
 
 
 def read_file(question):
-    questions = [], []
-
     with open(question, 'r') as file:
         questions = file.readlines()
-
-    return questions
-
-
-sw = stopwords.words("english")
+        return questions
 
 
 def find_similarity(questions, user):
@@ -48,4 +35,4 @@ def answer(ranks):
 if __name__ == "__main__":
     questions = read_file("data/questions.txt")
     ranks = find_similarity(questions, "Can you tell me what an IEP is")
-    answer(ranks)
+    rank = answer(ranks)
