@@ -1,3 +1,7 @@
+import math
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+import nltk
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,10 +10,6 @@ import matplotlib.pyplot as plt
 import spacy
 nlp = spacy.load("en_core_web_md")
 
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-import math
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -39,9 +39,9 @@ def find_similarity(questions, user):
     sorted_ranks = sorted(ranks, key=lambda x: x[1], reverse=True)
     return sorted_ranks
 
-def answer(ranks):
-    f_idx, s_idx = ranks[0][0], ranks[1][0]
 
+def answer(ranks):
+    f_idx = ranks[0][0]
     return f_idx
 
 
