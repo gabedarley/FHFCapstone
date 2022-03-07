@@ -22,8 +22,8 @@ def answer_endpoint():
     message = request.json['message']
     ranks = find_similarity(questions, message)
     a_index = answer(ranks)
-    answerString = findAnswer(a_index)
-    return {'answer': answerString}
+    answerWithSource = findAnswer(a_index)
+    return {'answer': answerWithSource[0], 'source': answerWithSource[1]}
 
 
 if __name__ == '__main__':

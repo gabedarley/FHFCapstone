@@ -52,6 +52,11 @@ async function getHardResponse(userText) {
   botHtml += '</span></p>';
   $("#chatbox").append(botHtml);
 
+  if (botResponse['source'] != "") {
+    let sourceHtml = '<p class="botText"><span>' + botResponse['source'] + '</span></p>';
+    $("#chatbox").append(sourceHtml);
+  }
+
   document.getElementById("chat-bar-bottom").scrollIntoView(true);
 }
 

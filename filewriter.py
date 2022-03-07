@@ -33,5 +33,9 @@ def findAnswer(a_index):
     sheet = sheet.sheet1
 
     answers_col = sheet.col_values(2)
+    sources_col = sheet.col_values(3)
 
-    return answers_col[a_index + 1]
+    answer = answers_col[a_index + 1]
+    source = sources_col[a_index + 1]
+    print(source)
+    return [answer, source]
