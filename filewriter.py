@@ -7,10 +7,10 @@ def newRead():
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive'
     ]
-    credentials = ServiceAccountCredentials.from_json_keyfile_name("testkey.json", scopes) #access the json key you downloaded earlier
+    credentials = ServiceAccountCredentials.from_json_keyfile_name("testkey.json", scopes)
     file = gspread.authorize(credentials) # authenticate the JSON key with gspread
     sheet = file.open("QA Window") #open sheet
-    sheet = sheet.sheet1 #replace sheet_name with the name that corresponds to yours, e.g, it can be sheet1
+    sheet = sheet.sheet1
 
     f = open('data/questions.txt', 'w+')
 
@@ -27,10 +27,10 @@ def findAnswer(a_index):
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive'
     ]
-    credentials = ServiceAccountCredentials.from_json_keyfile_name("testkey.json", scopes) #access the json key you downloaded earlier
+    credentials = ServiceAccountCredentials.from_json_keyfile_name("testkey.json", scopes)
     file = gspread.authorize(credentials) # authenticate the JSON key with gspread
     sheet = file.open("QA Window") #open sheet
-    sheet = sheet.sheet1 #replace sheet_name with the name that corresponds to yours, e.g, it can be sheet1
+    sheet = sheet.sheet1
 
     answers_col = sheet.col_values(2)
 

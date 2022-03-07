@@ -1,6 +1,6 @@
 async function getBotResponse(input) {
   // Simple responses
-  if (input == "hello" || input == "Hello" || input == "hi" || input == "Hi") {
+  if (input == "hello" || input == "Hello" || input == "hi" || input == "Hi" || input == "test") {
     return "Hello there!";
   } else if (input == "goodbye" || input == "Goodbye" || input == "bye" || input == "Bye") {
     return "Let us know if you need anything else!";
@@ -20,7 +20,7 @@ async function getBotResponse(input) {
         body: JSON.stringify(data)
       })
       if (response.status === 200) {
-        const responseBot = await response.text()
+        const responseBot = await response.json();
         return responseBot;
       }
     } catch (error) {
