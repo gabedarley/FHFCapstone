@@ -38,4 +38,5 @@ def findAnswer(a_index):
     answer = answers_col[a_index + 1]
     source = sources_col[a_index + 1]
     print(source)
-    return [answer, source]
+    print(answer.split("\n"))
+    return [answer.split("\n"), source]
